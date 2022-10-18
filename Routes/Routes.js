@@ -41,9 +41,9 @@ const Storages = multer.diskStorage({
 
 const Upload = multer({
   storage: Storages,
-  limits: {
-    fileSize: 90000000,
-  },
+  // limits: {
+    // fileSize: 90000000,
+  // },
 });
 
 const users = multer.diskStorage({
@@ -97,7 +97,7 @@ Route.get("/universities", getUniversities);
 Route.post("/programme", postProgramme);
 Route.get("/programme", getProgramme);
 Route.get("/event/:id", EventById);
-Route.put("/editevent", editEvent);
+Route.put("/editevent",eventImgUpload.single("eventImage"), editEvent);
 Route.post("/addquiz", addQuiz);
 Route.get("/quizdata", quizData);
 Route.put("/edit-event", editEvent);

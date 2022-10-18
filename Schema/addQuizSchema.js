@@ -1,6 +1,11 @@
 import mongoose from "mongoose";
 const addQuizSchema = new mongoose.Schema(
   {
+    quizQuestionNo:
+    {
+    type:Number,
+    require:true
+    },
     quizQuestion: {
       type: String,
       required: true,
